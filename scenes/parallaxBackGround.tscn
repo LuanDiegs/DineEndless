@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu3b6prvbv5i6"]
+
+[ext_resource type="Texture2D" uid="uid://m3e3yxmgfrje" path="res://assets/parallaxBackground/1.png" id="1_apbwi"]
+[ext_resource type="Texture2D" uid="uid://cxqettd080pa1" path="res://assets/parallaxBackground/4.png" id="3_v4ppy"]
+[ext_resource type="Texture2D" uid="uid://bun50gvn2j5em" path="res://assets/parallaxBackground/5.png" id="4_pwuao"]
+[ext_resource type="Texture2D" uid="uid://jynyhhjagr3i" path="res://assets/parallaxBackground/6.png" id="5_n8gdf"]
+
+[node name="ParallaxBackGround" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Ceu" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Ceu"]
+texture_filter = 1
+scale = Vector2(2.23857, 2.23857)
+texture = ExtResource("1_apbwi")
+centered = false
+
+[node name="Nuvens1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+motion_offset = Vector2(-3.465, 0)
+motion_mirroring = Vector2(1289, 0)
+
+[node name="Nuvens" type="Sprite2D" parent="ParallaxBackground/Nuvens1"]
+texture_filter = 1
+position = Vector2(0, -101)
+scale = Vector2(2.239, 2.239)
+texture = ExtResource("3_v4ppy")
+centered = false
+
+[node name="Nuvens2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1289, 0)
+
+[node name="Nuvens" type="Sprite2D" parent="ParallaxBackground/Nuvens2"]
+texture_filter = 1
+position = Vector2(0, -101)
+scale = Vector2(2.239, 2.239)
+texture = ExtResource("4_pwuao")
+centered = false
+flip_h = true
+
+[node name="Nuvens3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.1, 1.1)
+motion_mirroring = Vector2(1289, 0)
+
+[node name="Nuvens" type="Sprite2D" parent="ParallaxBackground/Nuvens3"]
+texture_filter = 1
+position = Vector2(0, -101)
+scale = Vector2(2.239, 2.239)
+texture = ExtResource("5_n8gdf")
+centered = false

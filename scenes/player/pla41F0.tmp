@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://brys256lgkvh3"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_vfgel"]
+[ext_resource type="Texture2D" uid="uid://oua1o7n2ugt3" path="res://icon.svg" id="2_gdd0a"]
+[ext_resource type="Script" path="res://nodes/stateMachine/finiteStateMachine.gd" id="3_e4w5c"]
+[ext_resource type="Script" path="res://nodes/stateMachine/runningState.gd" id="4_2auua"]
+[ext_resource type="Script" path="res://nodes/stateMachine/jumpState.gd" id="5_cscvr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sti07"]
+size = Vector2(68, 73)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_vfgel")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(0.585938, 0.585938)
+texture = ExtResource("2_gdd0a")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_sti07")
+
+[node name="FiniteStateMachine" type="Node" parent="."]
+script = ExtResource("3_e4w5c")
+
+[node name="RunningState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("4_2auua")
+player = NodePath("../..")
+
+[node name="JumpState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("5_cscvr")
+player = NodePath("../..")

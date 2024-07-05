@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2f7iqwjufc25"]
+
+[ext_resource type="Script" path="res://scenes/level1/level1.gd" id="1_qutaf"]
+[ext_resource type="PackedScene" uid="uid://brys256lgkvh3" path="res://scenes/player/player.tscn" id="2_00kcn"]
+[ext_resource type="PackedScene" uid="uid://cu3b6prvbv5i6" path="res://scenes/parallaxBackGround.tscn" id="3_onw88"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxneh"]
+size = Vector2(1920, 500)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_qutaf")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 590)
+scale = Vector2(2, 1.096)
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+offset_top = 1.0
+offset_right = 1920.0
+offset_bottom = 501.0
+color = Color(0.235294, 0.235294, 0.235294, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(960, 250)
+shape = SubResource("RectangleShape2D_fxneh")
+debug_color = Color(0, 0.6, 0.701961, 0.0431373)
+
+[node name="Player" parent="." instance=ExtResource("2_00kcn")]
+position = Vector2(88, 433)
+scale = Vector2(1.12992, 1.12992)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(491.186, -43.366)
+limit_smoothed = true
+
+[node name="ParallaxBackGround" parent="." instance=ExtResource("3_onw88")]
