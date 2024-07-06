@@ -13,9 +13,9 @@ func exitState():
 	set_physics_process(false)
 
 
-func transition():
+func transition(delta):
 	pass
 
 
 func _physics_process(delta):
-	transition()
+	transition(delta)

@@ -14,8 +14,6 @@ func _ready():
 
 func changeState(state: String):
 	# Find the child in all states
-	print(find_child(state))
-	print(previous_state)
 	current_state = find_child(state) as State
 	current_state.enterState()
 	

@@ -15,7 +15,7 @@ func enterState():
 	restartGameTimer.start()
 	
 
-func transition():
+func transition(delta):
 	pass
 
 

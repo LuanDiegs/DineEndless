@@ -11,10 +11,10 @@ size = Vector2(1920, 500)
 script = ExtResource("1_qutaf")
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(-500, 590)
+position = Vector2(-1330, 590)
 scale = Vector2(2, 1.096)
 
-[node name="FloorWidth" type="ColorRect" parent="Floor"]
+[node name="ColorRect" type="ColorRect" parent="Floor"]
 offset_top = 1.0
 offset_right = 1920.0
 offset_bottom = 501.0
@@ -25,25 +25,12 @@ position = Vector2(960, 250)
 shape = SubResource("RectangleShape2D_fxneh")
 debug_color = Color(0, 0.6, 0.701961, 0.0431373)
 
-[node name="Player" type="Node2D" parent="."]
-position = Vector2(575, 324)
+[node name="Player" parent="." instance=ExtResource("2_00kcn")]
+position = Vector2(105, 433)
 scale = Vector2(1.12992, 1.12992)
 
-[node name="Player" parent="Player" instance=ExtResource("2_00kcn")]
-position = Vector2(-415.959, 96.467)
-scale = Vector2(1, 1)
-
-[node name="Camera" type="Camera2D" parent="Player"]
-position = Vector2(0, -3.05176e-05)
-scale = Vector2(1, 1)
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(415.959, -96.467)
 limit_smoothed = true
-drag_vertical_offset = 1.0
 
 [node name="ParallaxBackGround" parent="." instance=ExtResource("3_onw88")]
-
-[node name="DEBUG" type="Camera2D" parent="."]
-position = Vector2(5696, 215)
-scale = Vector2(1.12992, 1.12992)
-enabled = false
-zoom = Vector2(0.1, 0.1)
-limit_smoothed = true

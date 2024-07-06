@@ -36,6 +36,7 @@ scale = Vector2(1, 1)
 [node name="Camera" type="Camera2D" parent="Player"]
 position = Vector2(0, -3.05176e-05)
 scale = Vector2(1, 1)
+zoom = Vector2(0.1, 0.1)
 limit_smoothed = true
 drag_vertical_offset = 1.0
 

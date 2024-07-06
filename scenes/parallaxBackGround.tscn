@@ -14,40 +14,40 @@ motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Ceu"]
 texture_filter = 1
-scale = Vector2(2.23857, 2.23857)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_apbwi")
 centered = false
 
 [node name="Nuvens1" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.9, 0.9)
 motion_offset = Vector2(-3.465, 0)
-motion_mirroring = Vector2(1289, 0)
+motion_mirroring = Vector2(1145, 0)
 
 [node name="Nuvens" type="Sprite2D" parent="ParallaxBackground/Nuvens1"]
 texture_filter = 1
-position = Vector2(0, -101)
-scale = Vector2(2.239, 2.239)
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
 texture = ExtResource("3_v4ppy")
 centered = false
 
 [node name="Nuvens2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(1289, 0)
+motion_mirroring = Vector2(1145, 0)
 
 [node name="Nuvens" type="Sprite2D" parent="ParallaxBackground/Nuvens2"]
 texture_filter = 1
-position = Vector2(0, -101)
-scale = Vector2(2.239, 2.239)
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
 texture = ExtResource("4_pwuao")
 centered = false
 flip_h = true
 
 [node name="Nuvens3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(1.1, 1.1)
-motion_mirroring = Vector2(1289, 0)
+motion_mirroring = Vector2(1145, 0)
 
 [node name="Nuvens" type="Sprite2D" parent="ParallaxBackground/Nuvens3"]
 texture_filter = 1
-position = Vector2(0, -101)
-scale = Vector2(2.239, 2.239)
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
 texture = ExtResource("5_n8gdf")
 centered = false
