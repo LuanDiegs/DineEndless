@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc6lq3mepgvu"]
+[gd_scene load_steps=4 format=3 uid="uid://d4hvjo75ai17g"]
 
 [ext_resource type="Texture2D" uid="uid://oua1o7n2ugt3" path="res://icon.svg" id="1_il6pu"]
+[ext_resource type="PackedScene" uid="uid://cxajx32qgf01a" path="res://scenes/obstacles/hitboxObstacle/hitBoxObstacle.tscn" id="2_8g4us"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_am237"]
+size = Vector2(126, 122)
 
 [node name="Obstacle" type="Node2D"]
+scale = Vector2(0.7, 0.7)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PivotPoint" type="Node2D" parent="."]
+position = Vector2(0, -64.2857)
+
+[node name="Sprite2D" type="Sprite2D" parent="PivotPoint"]
 texture = ExtResource("1_il6pu")
+
+[node name="HitBoxObstacle" parent="PivotPoint" instance=ExtResource("2_8g4us")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PivotPoint/HitBoxObstacle"]
+shape = SubResource("RectangleShape2D_am237")

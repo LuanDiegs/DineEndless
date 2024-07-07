@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2f7iqwjufc25"]
+
+[ext_resource type="Script" path="res://scenes/level1/level1.gd" id="1_qutaf"]
+[ext_resource type="PackedScene" uid="uid://brys256lgkvh3" path="res://scenes/player/player.tscn" id="2_00kcn"]
+[ext_resource type="PackedScene" uid="uid://eu5b38yf7n8k" path="res://scenes/UI/Score/score.tscn" id="2_87uj7"]
+[ext_resource type="PackedScene" uid="uid://cu3b6prvbv5i6" path="res://scenes/parallaxBackground/parallaxBackGround.tscn" id="3_onw88"]
+[ext_resource type="AudioStream" uid="uid://cdelgt3ygyqae" path="res://assets/music/awesomeness.wav" id="5_hyhr4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxneh"]
+size = Vector2(1920, 500)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_qutaf")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score" parent="UI" instance=ExtResource("2_87uj7")]
+layout_mode = 1
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(-500, 590)
+scale = Vector2(2, 1.096)
+
+[node name="FloorWidth" type="ColorRect" parent="Floor"]
+offset_top = 1.0
+offset_right = 1920.0
+offset_bottom = 501.0
+color = Color(0.235294, 0.235294, 0.235294, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(960, 250)
+shape = SubResource("RectangleShape2D_fxneh")
+debug_color = Color(0, 0.6, 0.701961, 0.0431373)
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(575, 324)
+scale = Vector2(1.12992, 1.12992)
+
+[node name="Player" parent="Player" instance=ExtResource("2_00kcn")]
+position = Vector2(-415.959, 96.467)
+
+[node name="Camera" type="Camera2D" parent="Player"]
+position = Vector2(0, -3.05176e-05)
+limit_smoothed = true
+
+[node name="ParallaxBackGround" parent="." instance=ExtResource("3_onw88")]
+
+[node name="DEBUG" type="Camera2D" parent="."]
+position = Vector2(5696, 215)
+scale = Vector2(1.12992, 1.12992)
+enabled = false
+zoom = Vector2(0.1, 0.1)
+limit_smoothed = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hyhr4")
+autoplay = true

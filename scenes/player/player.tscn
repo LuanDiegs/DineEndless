@@ -38,3 +38,5 @@ script = ExtResource("6_e65ge")
 player = NodePath("../..")
 
 [node name="TimeToRestartGame" type="Timer" parent="FiniteStateMachine/DieState"]
+
+[connection signal="died" from="." to="FiniteStateMachine/DieState" method="changeStateToDeath"]

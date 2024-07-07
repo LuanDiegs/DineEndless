@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://eu5b38yf7n8k"]
+
+[ext_resource type="Script" path="res://scenes/UI/Score/score.gd" id="1_ou0se"]
+
+[node name="Score" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ou0se")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="score" type="Label" parent="CanvasLayer"]
+offset_left = 40.0
+offset_top = 23.0
+offset_right = 117.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 24
+text = "Score: "
+
+[node name="scoreValue" type="Label" parent="CanvasLayer"]
+offset_left = 117.0
+offset_top = 23.0
+offset_right = 173.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 24
+text = "0000"
+
+[node name="highScore" type="Label" parent="CanvasLayer"]
+offset_left = 933.0
+offset_top = 23.0
+offset_right = 1063.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 24
+text = "HighScore: "
+
+[node name="highScoreValue" type="Label" parent="CanvasLayer"]
+offset_left = 1060.0
+offset_top = 23.0
+offset_right = 1116.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 24
+text = "0000"
